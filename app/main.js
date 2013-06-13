@@ -51,12 +51,14 @@ require([
         template: _.template($('#item-template').html()),
         model: Tweet,
         events: {
+            // CRUD
             'click .tweet': 'guardar',
+            'click .edit': 'editar',
+            'click .delete': 'borrar',
+            // Textarea
             'focus #textbox': 'countTweetChars',
             'keydown #textbox': 'countTweetChars',
-            'keyup #textbox': 'countTweetChars',
-            'click .edit': 'editar',
-            'click .delete': 'borrar'
+            'keyup #textbox': 'countTweetChars'
         },
 
         initialize: function () {
@@ -65,6 +67,8 @@ require([
             this.render();
         },
         render: function () {
+			$("#textbox").val("");
+            $(".tweet").val(0);
             Tweets.fetch();
             $('ol').html(this.template({
                 tweets: Tweets.toJSON()
@@ -92,8 +96,6 @@ require([
                 cTweet.attributes.contenido = nContenido;
                 cTweet.save();
             }
-            $("#textbox").val("");
-            $(".tweet").val(0);
             this.render();
         },
         editar: function (ev) {
@@ -105,8 +107,6 @@ require([
         borrar: function (ev) {
             var cTweet = Tweets.get($(ev.currentTarget).val());
             cTweet.destroy();
-            $("#textbox").val("");
-            $(".tweet").val(0);
             this.render();
         },
         countTweetChars: function () {

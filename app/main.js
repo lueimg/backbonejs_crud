@@ -53,6 +53,7 @@ require([
         events: {
             // CRUD
             'click .tweet': 'guardar',
+            'click .tweet_new': 'guardar',
             'click .edit': 'editar',
             'click .delete': 'borrar',
             // Textarea
@@ -74,7 +75,7 @@ require([
                 tweets: Tweets.toJSON()
             }));
         },
-        guardar: function () {
+        guardar: function (ev) {
             var now = new Date();
             var nContenido = $("#textbox").val();
             if (nContenido === "") {
@@ -82,7 +83,7 @@ require([
                 return true;
             }
             var nFecha = now;
-            if ($(".tweet").val() === '0') {
+            if ($(ev.currentTarget).val()=== '0') {
                 var nCodigo = (!Tweets.length) ? 1 : Tweets.last().get('codigo') + 1;
                 var nTweet = new Tweet({
                     fecha: nFecha,
@@ -91,9 +92,11 @@ require([
                 });
                 Tweets.add(nTweet);
                 nTweet.save();
+                $(".tweet_new").fadeOut(1000);
             } else {
                 var cTweet = Tweets.get($('.tweet').val());
                 cTweet.attributes.contenido = nContenido;
+                cTweet.attributes.fecha = now;
                 cTweet.save();
             }
             this.render();
@@ -101,8 +104,9 @@ require([
         editar: function (ev) {
             Tweets.fetch();
             var cTweet = Tweets.get($(ev.currentTarget).val());
-            $("#textbox").val(cTweet.attributes.contenido);
+            $("#textbox").val(cTweet.attributes.contenido).focus();
             $(".tweet").val($(ev.currentTarget).val());
+            $(".tweet_new").fadeIn(1000);
         },
         borrar: function (ev) {
             var cTweet = Tweets.get($(ev.currentTarget).val());

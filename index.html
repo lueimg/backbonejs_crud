@@ -32,15 +32,31 @@
 				<p>
 						Tweet: 
 						<br />
-						<textarea name="tweet" id="textbox" rows="3" style="width:350px"></textarea>
+						<textarea name="tweet" id="textbox" rows="3" style="width:99%"></textarea>
 					</p>
-					<p style="width: 350px; text-align:right">
-						
+					<p style="width: 99%; text-align:right;heigth: 350px">
 						<span id="char_count" style="width:40px; padding:20px; font-size:small;color:#888">&nbsp;</span>
 						<button type='button' class="tweet" value="0">Tweet</button><br />
+						<button type='button' class="tweet_new" value="0" style="display:none">Guardar como nuevo</button><br />
 						<span id="sobrante" style="color:#f00"></span>
 					</p>
-					
+					<p>
+					Free repository on <a href="https://github.com/jallander/backbonejs_crud">Github</a><br />
+					&copy; Copyright  by <a href="http://jallander.wordpress.com">JALL</a></p>
+					<p>More Backbone.js examples:
+					<ul>
+						<li><a href="http://backbonejs.webcindario.com/backbonejs/">House Music by Juno Records</a></li>
+						<li><a href="http://backbonejs.webcindario.com/backbonejs_bbc/">BBC News Feeds</a></li>
+						
+					</ul>
+					</p>
+					<p>
+					<a href="https://twitter.com/share" class="twitter-share-button" data-via="jall_ander" data-lang="gl">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<br />
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<g:plusone></g:plusone>
+				</p>
 			</div>
 			<div style="width:69%; float:left">
 				<ol>
@@ -49,16 +65,7 @@
 			</div>
 
 			<footer style="clear:left">
-				<p>
-					Free repository on <a href="https://github.com/jallander/backbonejs_crud">Github</a><br />
-					&copy; Copyright  by <a href="http://jallander.wordpress.com">JALL</a></p>
-					<p>
-					<a href="https://twitter.com/share" class="twitter-share-button" data-via="jall_ander" data-lang="gl">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-<br />
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-<g:plusone></g:plusone>
-				</p>
+				
 			</footer>
 			<script data-main="app/main" src="app/vendor/require.js"></script>
 			<script type="text/template" id="item-template">

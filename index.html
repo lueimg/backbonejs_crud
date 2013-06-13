@@ -7,8 +7,8 @@
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-		<title>index</title>
-		<meta name="description" content="" />
+		<title>Backbonejs CRUD - Tweets</title>
+		<meta name="description" content="A backbone.js example of CRUD" />
 		<meta name="author" content="jall" />
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
@@ -29,21 +29,18 @@
 			<nav></nav>
 
 			<div style="width:30%; float:left;">
-				
+				<p>
+						Tweet: 
+						<br />
+						<textarea name="tweet" id="textbox" rows="3" style="width:350px"></textarea>
+					</p>
+					<p style="width: 350px; text-align:right">
+						
+						<span id="char_count" style="width:40px; padding:20px; font-size:small;color:#888">&nbsp;</span>
+						<button type='button' class="tweet" value="0">Tweet</button><br />
+						<span id="sobrante" style="color:#f00"></span>
+					</p>
 					
-						<p>
-							Tweet: 
-							<br />
-							<textarea name="tweet" id="textbox" rows="3" style="width:350px"></textarea>
-						</p>
-						<p style="width: 350px; text-align:right">
-							
-							<span id="char_count" style="width:40px; padding:20px; font-size:small;color:#888">&nbsp;</span>
-							<button type='button' class="tweet" value="0">Tweet</button><br />
-							<span id="sobrante" style="color:#f00"></span>
-						</p>
-					
-				
 			</div>
 			<div style="width:69%; float:left">
 				<ol>
@@ -53,7 +50,14 @@
 
 			<footer style="clear:left">
 				<p>
-					Free repository on <a href="https://github.com/jallander/backbonejs_crud">Github</a><br />&copy; Copyright  by <a href="http://jallander.wordpress.com">JALL</a>
+					Free repository on <a href="https://github.com/jallander/backbonejs_crud">Github</a><br />
+					&copy; Copyright  by <a href="http://jallander.wordpress.com">JALL</a></p>
+					<p>
+					<a href="https://twitter.com/share" class="twitter-share-button" data-via="jall_ander" data-lang="gl">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<br />
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<g:plusone></g:plusone>
 				</p>
 			</footer>
 			<script data-main="app/main" src="app/vendor/require.js"></script>

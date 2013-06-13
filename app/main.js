@@ -92,13 +92,14 @@ require([
                 });
                 Tweets.add(nTweet);
                 nTweet.save();
-                $(".tweet_new").fadeOut(1000);
+                
             } else {
                 var cTweet = Tweets.get($('.tweet').val());
                 cTweet.attributes.contenido = nContenido;
                 cTweet.attributes.fecha = now;
                 cTweet.save();
             }
+            $(".tweet_new").fadeOut(1000);
             this.render();
         },
         editar: function (ev) {
